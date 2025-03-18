@@ -21,14 +21,14 @@ const Hero = () => {
         initial={{ y: 50, opacity: 0 }}
         animate={{y: 0, opacity: 1}}
         transition={{ duration: 0.8, delay: 0.2 }}
-        className='flex max-w-[600px] flex-col items-center justify-center gap-3 text-center'>
-          <div className="pb-4"> {/* Wrapper with padding */}
-          <h1 className="bg-gradient-to-r from-blue-500 to-pink-500 bg-clip-text text-transparent text-5xl font-light leading-relaxed md:text-7xl pb-1">
+        className='flex max-w-[600px] flex-col items-center justify-center gap-1 text-center'>
+          <div className="pb-1"> {/* Wrapper with padding */}
+          <h1 className="bg-gradient-to-r from-blue-500 to-pink-500 bg-clip-text text-transparent text-5xl font-light leading-relaxed md:text-7xl pb-3">
                 Bill Nguyen
           </h1>
 
           </div>
-          <h3 className="bg-gradient-to-r from-blue-500 to-pink-500 bg-clip-text text-transparent text-2xl md:text-3xl">Computer Science Student</h3>
+          <h3 className="bg-gradient-to-r from-blue-500 to-pink-500 bg-clip-text text-transparent text-2xl md:text-3xl mb-1">Computer Science Student</h3>
 
           <p className="md:text-base text-pretty text-sm text-gray-400">I am a Computer Science student at the Monash University, Melbourne. I am passionate about software development and I am always looking for opportunities to learn and grow.</p>
         </motion.div>

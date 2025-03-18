@@ -1,8 +1,72 @@
 import React from 'react'
+import { BiLogoBootstrap, BiLogoGithub, BiLogoJavascript, BiLogoNodejs, BiLogoPostgresql, BiLogoPython, BiLogoReact, BiLogoTailwindCss, BiLogoTypescript } from 'react-icons/bi'
+import { motion } from 'framer-motion'
 
 const Tech = () => {
+
+  const variants = {
+    hidden: {
+      opacity: 0,
+      y: 50
+    },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.8,
+        delay: 0.2
+      }
+    }
+  }
   return (
-    <div>Tech</div>
+    <div id='#tech' className='flex min-h-[70vh] w-full flex-col items-center justify-center gap-16 md:gap-32'>
+      
+     <motion.h1 
+     variants={variants}
+     initial='hidden'
+     whileInView="visible"
+     transition={{ duration: 0.5}}
+
+     className='text-4xl font-light text-white md:text-6xl'>Tech Stack</motion.h1>
+
+     <div className='flex flex-wrap gap-10 items-center justify-center p-5'>
+        <div >
+          <BiLogoJavascript className='cursor-pointer text-[80px] text-orange-500 transition-all duration-300 hover:-translate-y-5 sm:text-[100px] md:text-[120px]' />
+        </div>
+
+        <div >
+          <BiLogoTypescript className='cursor-pointer text-[80px] text-sky-500 transition-all duration-300 hover:-translate-y-5 sm:text-[100px] md:text-[120px]' />
+        </div>
+
+        <div >
+          <BiLogoReact className='cursor-pointer text-[80px] text-sky-400 transition-all duration-300 hover:-translate-y-5 sm:text-[100px] md:text-[120px]' />
+        </div>
+
+        <div >
+          <BiLogoTailwindCss className='cursor-pointer text-[80px] text-blue-500 transition-all duration-300 hover:-translate-y-5 sm:text-[100px] md:text-[120px]' />
+        </div>
+
+        <div >
+          <BiLogoBootstrap className='cursor-pointer text-[80px] text-purple-500 transition-all duration-300 hover:-translate-y-5 sm:text-[100px] md:text-[120px]' />
+        </div>
+
+        <div >
+          <BiLogoPython className='cursor-pointer text-[80px] text-sky-500 transition-all duration-300 hover:-translate-y-5 sm:text-[100px] md:text-[120px]' />
+        </div>
+
+      
+
+        <div >
+          <BiLogoNodejs className='cursor-pointer text-[80px] text-green-500 transition-all duration-300 hover:-translate-y-5 sm:text-[100px] md:text-[120px]' />
+        </div>
+
+        <div >
+          <BiLogoPostgresql className='cursor-pointer text-[80px] text-blue-500 transition-all duration-300 hover:-translate-y-5 sm:text-[100px] md:text-[120px]' />
+        </div>
+
+      </div>
+      
+      </div>
   )
 }
 
