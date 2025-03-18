@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities; 
+*{
+ font-family: Jetbrains Mono;
+}
+
+@layer utilities{
+  @keyframes blink {
+    0% {
+     opacity: 1;
+    }
+    50% {
+      opacity: 0;
+    }
+    
+  }
+
+  .animate-blink {
+    animation: blink 0.8s step-end infinite;
+  }
+
+  @keyframes loading {
+    0% {
+     transform: translateX(-100%);
+    }
+    100% {
+      transform: translateX(250%);
+    }
+    
+  }
+
+  .animate-loading-bar {
+    animation: loading 1s infinite;
+  }
+
+  /* Your animations here */
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
