@@ -3,46 +3,22 @@
 @tailwind utilities; 
 *{
  font-family: Jetbrains Mono;
+ scroll-behavior: smooth;
 }
 
-@layer utilities{
-  @keyframes blink {
-    0% {
-     opacity: 1;
-    }
-    50% {
-      opacity: 0;
-    }
-    
-  }
+::-webkit-scrollbar {
+  width: 10px;
 
-  .animate-blink {
-    animation: blink 0.8s step-end infinite;
-  }
-
-  @keyframes loading {
-    0% {
-     transform: translateX(-100%);
-    }
-    100% {
-      transform: translateX(250%);
-    }
-    
-  }
-
-  .animate-loading-bar {
-    animation: loading 1s infinite;
-  }
-
-  /* Your animations here */
 }
 
-.reveal {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.3s ease, transform 0.3s ease;
+::-webkit-scrollbar-track {
+  background: black;
 }
-.reveal.visible {
-  opacity: 1;
-  transform: translateY(0);
+
+::-webkit-scrollbar-thumb {
+  background:linear-gradient(to bottom, rgb(0, 62, 196), rgb(184, 0, 153));
 }
+
+
+
+
