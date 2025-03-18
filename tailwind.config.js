@@ -7,15 +7,14 @@ export default {
   theme: {
     extend: {
       animation: {
-        'loading-bar': 'loadingBar 2s ease-in-out infinite',
+        'loading-bar': 'loadingBar 1.5s ease-in-out infinite',
         'blink': 'blink 0.8s step-end infinite',
       },
       keyframes: {
         loadingBar: {
-          '0%': { width: '0%', left: '0' },
-          '50%': { width: '100%', left: '0' },
-          '51%': { width: '100%', right: '0' },
-          '100%': { width: '0%', right: '0' }
+          '0%': { transform: 'translateX(-100%)' },
+          
+          '100%': { transform: 'translateX(250%)' }
         },
         blink: {
           '0%, 100%': { opacity: '1' },
