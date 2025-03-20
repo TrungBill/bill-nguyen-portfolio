@@ -26,8 +26,8 @@ const projectData = [
     title: 'PitchPulse',
     description: 'A football chrome extension that displays upcoming fixtures and results of football matches.',
     technologies: ['Vite','React', 'Tailwind CSS', 'Football.org API', 'Chrome Storage API'],
-    github: 'https://github.com/username/pitchpulse',
-    website: 'https://pitchpulse.demo.com'
+    github: 'https://github.com/TrungBill/Football-team-result-tracker-chrome-extension',
+    website: 'https://github.com/TrungBill/Football-team-result-tracker-chrome-extension'
   },
   {
     image: travel,
@@ -35,15 +35,15 @@ const projectData = [
     description: 'A travel companion web application that displays local points of interest with real-time weather data and a location-based search to provide quick discovery and detailed info.',
     technologies: ['Vite','React', 'Tailwind CSS', 'Travel Advisor API', 'Open Weather API'],
     github: 'https://github.com/username/travel-mate',
-    website: 'https://travel-mate.demo.com'
+    website: 'https://yourtravelmate.netlify.app/'
   },
   {
     image: portfolio,
     title: 'Portfolio Website',
     description: 'Modern, responsive Portfolio Website for a Business Analytics Student at Deakin University.',
     technologies: ['Vite','React', 'Tailwind CSS', 'Framer Motion', 'EmailJS'],
-    github: 'https://github.com/username/portfolio',
-    website: 'https://portfolio.demo.com'
+    github: 'https://github.com/TrungBill/claire-portfolio',
+    website: 'https://byclairenguyen.netlify.app/'
   },
 ];
 
@@ -73,7 +73,13 @@ const ProjectCard = ({ project, index }) => {
                 <BsGithub className="text-xl" /> GitHub
               </a>
             )}
-            {project.website && (
+            
+            {/* First project shows Coming Soon, others show Live Demo with links */}
+            {index === 0 ? (
+              <div className="flex items-center gap-2 px-4 py-2 rounded-lg bg-gray-700 cursor-not-allowed opacity-70">
+                <CgWebsite className="text-xl" /> Coming Soon
+              </div>
+            ) : project.website && (
               <a href={project.website} target="_blank" rel="noopener noreferrer"
                  className="flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-600 hover:bg-blue-500 transition-all duration-300">
                 <CgWebsite className="text-xl" /> Live Demo

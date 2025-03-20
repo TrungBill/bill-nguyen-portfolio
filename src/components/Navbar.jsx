@@ -2,6 +2,7 @@ import React from 'react'
 import { BsGithub, BsLinkedin } from 'react-icons/bs'
 import { useState } from 'react'
 import { BiMenu, BiX } from 'react-icons/bi'
+import { BsDownload } from 'react-icons/bs'
 const Navbar = () => {
   const [isOpened, setIsOpened] = useState(false)
   const menuOpen = () => setIsOpened(!isOpened)
@@ -27,7 +28,15 @@ const Navbar = () => {
           <a href="https://github.com/TrungBill" target="_blank" rel="noopener noreferrer">
             <BsGithub />
           </a>
+         
+
          </li>
+
+         <li className='cursor-pointer text-xl opacity-70 transition-all duration-300 hover:text-white-500 hover:opacity-100'> 
+              <a href="/cv.pdf" download className="flex items-center gap-1.5">
+                <BsDownload /> <span className="text-sm font-medium">Resume</span>
+              </a>
+        </li>
         </ul>
 
         {/* Mobile menu toggle */}
@@ -58,6 +67,12 @@ const Navbar = () => {
                   <a href="https://github.com/your-github-username" target="_blank" rel="noopener noreferrer">
                     <BsGithub />
                   </a>
+                </li>
+
+                <li className='cursor-pointer text-xl opacity-70 transition-all duration-300 hover:text-orange-500 hover:opacity-100'> 
+                    <a href="/cv.pdf" download className="flex items-center gap-1.5">
+                      <BsDownload /> <span className="text-sm font-medium">Resume</span>
+                    </a>
                 </li>
               </ul>
           </div>
