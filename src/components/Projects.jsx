@@ -4,6 +4,20 @@ import football from '/public/football.png'
 import portfolio from '/public/portfolio.png'
 import travel from '/public/travel.png'
 
+// Improved ScrollReveal with staggered animation
+const ScrollReveal = ({children, delay = 0}) => {
+  return(
+    <motion.div
+      initial={{ opacity: 0, y: 100 }} // Increased y offset
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: false, amount: 0.3 }} // Lower threshold - only 10% needs to be visible
+      transition={{ duration: 0.8}}
+    >
+      {children}
+    </motion.div>
+  )
+}
+
 const projectData = [
   {
     image: football,
@@ -27,47 +41,45 @@ const projectData = [
   },
 ];
 
-const ProjectCard = ({ project}) => {
+const ProjectCard = ({ project, index }) => {
   return(
-    <div className='flex flex-col items-center gap-8 md:flex-row md:gap-24'>
-      <img src={project.image} alt="" className='w-full cursor-pointer rounded-2xl transition-all duration-300 hover:scale-105 md:w-[250px]'/>
-      <div className='flex flex-col gap-5'>
-        <div className='flex flex-col gap-3'>
-          <div className='text-xl font-semibold'>{project.title}</div>
-          <p className='text-gray-400'>{project.description}</p>
-        </div>
+    <ScrollReveal delay={index * 0.2}> {/* Add staggered delay based on index */}
+      <div className='flex flex-col items-center gap-8 md:flex-row md:gap-24'>
+        <img src={project.image} alt={project.title} className='w-full cursor-pointer rounded-2xl transition-all duration-300 hover:scale-105 md:w-[250px]'/>
+        <div className='flex flex-col gap-5'>
+          <div className='flex flex-col gap-3'>
+            <div className='text-xl font-semibold'>{project.title}</div>
+            <p className='text-gray-400'>{project.description}</p>
+          </div>
 
-        <div className='flex flex-wrap gap-5'>
-          {
-            project.technologies.map((tech, index) => (
-              <span key={index} className='rounded-lg bg-purple p-3'>{tech}</span>
-            ))
-          }
-
+          <div className='flex flex-wrap gap-5'>
+            {
+              project.technologies.map((tech, index) => (
+                <span key={index} className='rounded-lg bg-purple-600/30 p-3'>{tech}</span>
+              ))
+            }
+          </div>
         </div>
-      </div>
-    </div> 
+      </div> 
+    </ScrollReveal>
   )
 }
 
 const Projects = () => {
   return (
-    <div id="projects" className="flex min-h-screen w-full flex-col items-center justify-center gap-16 p-4 md:px-14 md:py-24">
-      <motion.h1 
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
-        className="text-4xl font-light text-white md:text-6xl"
-      >
-        Projects
-      </motion.h1>
-      
-      <div className="flex w-full max-w-[1000px] flex-col gap-16 text-white">
-        {
-          projectData.map((project, index) => (
-            <ProjectCard key={index} project={project} />
-          ))
-        }
+    <div id="projects" className="mb-32 mt-32 min-h-screen w-full py-20"> {/* Add more vertical margin */}
+      <div className="container mx-auto flex flex-col items-center justify-center gap-24 p-4"> {/* Increased gap */}
+        <ScrollReveal>
+          <h1 className='text-4xl font-light text-white md:text-6xl'>Projects</h1>
+        </ScrollReveal>
+       
+        <div className="flex w-full max-w-[1000px] flex-col gap-32 text-white"> {/* Increased gap */}
+          {
+            projectData.map((project, index) => (
+              <ProjectCard key={index} project={project} index={index} />
+            ))
+          }
+        </div>
       </div>
     </div>
   )
