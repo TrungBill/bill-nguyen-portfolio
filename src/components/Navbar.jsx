@@ -18,24 +18,29 @@ const Navbar = () => {
 
         <ul className="hidden md:flex gap-5">
          <li className='cursor-pointer text-xl opacity-70 transition-all duration-300 hover:text-blue-500 hover:opacity-100'> 
-          <BsLinkedin />
+          <a href="https://www.linkedin.com/in/billnguyen04/" target="_blank" rel="noopener noreferrer">
+            <BsLinkedin />
+          </a>
          </li>
 
          <li className='cursor-pointer text-xl opacity-70 transition-all duration-300 hover:text-orange-500 hover:opacity-100'> 
+          <a href="https://github.com/TrungBill" target="_blank" rel="noopener noreferrer">
             <BsGithub />
-          </li>
+          </a>
+         </li>
         </ul>
 
-        {isOpened? (
+        {/* Mobile menu toggle */}
+        {isOpened ? (
           <BiX className="block md:hidden text-4xl" onClick={menuOpen} />
-        ): (
+        ) : (
           <BiMenu className="block md:hidden text-4xl" onClick={menuOpen} />
         )}
 
+        {/* Mobile menu */}
         {isOpened && (
-           <div className={`fixed right-0 top-[84px] flex h-screen w-1/2 flex-col items-start justify-start gap-10 border-1 border-black-800 bg-black/80 backdrop-blur-sm p-12 ${isOpened ? "block": "hidden"}`}>
-             <ul className="flex flex-col
-              gap-9">
+           <div className="fixed right-0 top-[84px] flex h-screen w-1/2 flex-col items-start justify-start gap-10 border-1 border-black-800 bg-black/80 backdrop-blur-sm p-12">
+             <ul className="flex flex-col gap-9">
                 <a href="#home" className="cursor-pointer opacity-70 transition-all duration-300 hover:opacity-100"><li>Home</li></a>
                 <a href="#tech" className="cursor-pointer opacity-70 transition-all duration-300 hover:opacity-100"><li>Tech</li></a>
                 <a href="#projects" className="cursor-pointer opacity-70 transition-all duration-300 hover:opacity-100"><li>Projects</li></a>
@@ -44,12 +49,16 @@ const Navbar = () => {
 
               <ul className="flex flex-wrap gap-5">
                 <li className='cursor-pointer text-xl opacity-70 transition-all duration-300 hover:text-blue-500 hover:opacity-100'> 
-                  <BsLinkedin />
+                  <a href="https://www.linkedin.com/in/your-linkedin-username" target="_blank" rel="noopener noreferrer">
+                    <BsLinkedin />
+                  </a>
                 </li>
 
                 <li className='cursor-pointer text-xl opacity-70 transition-all duration-300 hover:text-orange-500 hover:opacity-100'> 
+                  <a href="https://github.com/your-github-username" target="_blank" rel="noopener noreferrer">
                     <BsGithub />
-                  </li>
+                  </a>
+                </li>
               </ul>
           </div>
         )}
