@@ -9,12 +9,14 @@ const Hero = () => {
         <motion.div
           initial={{ y: -50, opacity: 0 }}
           animate={{y: 0, opacity: 1}}
-          transition={{ duration: 0.8, delay: 0.2 }}>
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className='w-[300px] h-[300px]'>
+          
             
           <img 
             src={image}  
             alt='Bill Nguyen' 
-           className="w-[300px] h-[300px]  overflow-hidden rounded-full shadow-xl shadow-gray-900 transition-all duration-300 hover:-translate-y-5 hover:scale-105 hover:shadow-1xl hover:shadow-gray-600"
+           className="w-full h-full overflow-hidden rounded-full shadow-xl shadow-gray-900 transition-all duration-300 hover:-translate-y-5 hover:scale-105 hover:shadow-1xl hover:shadow-gray-600"
           />
         </motion.div>
         <motion.div 
