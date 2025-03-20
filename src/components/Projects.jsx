@@ -3,6 +3,8 @@ import { motion } from 'framer-motion'
 import football from '/public/football.png'
 import portfolio from '/public/portfolio.png'
 import travel from '/public/travel.png'
+import { BsGithub } from 'react-icons/bs';
+import { CgWebsite } from 'react-icons/cg';
 
 // Improved ScrollReveal with staggered animation
 const ScrollReveal = ({children, delay = 0}) => {
@@ -24,26 +26,30 @@ const projectData = [
     title: 'PitchPulse',
     description: 'A football chrome extension that displays upcoming fixtures and results of football matches.',
     technologies: ['Vite','React', 'Tailwind CSS', 'Football.org API', 'Chrome Storage API'],
+    github: 'https://github.com/username/pitchpulse',
+    website: 'https://pitchpulse.demo.com'
   },
   {
     image: travel,
     title: 'Travel Mate',
     description: 'A travel companion web application that displays local points of interest with real-time weather data and a location-based search to provide quick discovery and detailed info.',
-    technologies: ['Vite','React', 'Tailwind CSS', 'Travel Advisor API', 'Open Weather API']
+    technologies: ['Vite','React', 'Tailwind CSS', 'Travel Advisor API', 'Open Weather API'],
+    github: 'https://github.com/username/travel-mate',
+    website: 'https://travel-mate.demo.com'
   },
-
   {
     image: portfolio,
     title: 'Portfolio Website',
     description: 'Modern, responsive Portfolio Website for a Business Analytics Student at Deakin University.',
-    technologies: ['Vite','React', 'Tailwind CSS', 'Framer Motion', 'EmailJS' ]
-
+    technologies: ['Vite','React', 'Tailwind CSS', 'Framer Motion', 'EmailJS'],
+    github: 'https://github.com/username/portfolio',
+    website: 'https://portfolio.demo.com'
   },
 ];
 
 const ProjectCard = ({ project, index }) => {
   return(
-    <ScrollReveal delay={index * 0.2}> {/* Add staggered delay based on index */}
+    <ScrollReveal delay={index * 0.2}>
       <div className='flex flex-col items-center gap-8 md:flex-row md:gap-24'>
         <img src={project.image} alt={project.title} className='w-full cursor-pointer rounded-2xl transition-all duration-300 hover:scale-105 md:w-[250px]'/>
         <div className='flex flex-col gap-5'>
@@ -58,6 +64,21 @@ const ProjectCard = ({ project, index }) => {
                 <span key={index} className='rounded-lg bg-purple-600/30 p-3'>{tech}</span>
               ))
             }
+          </div>
+          
+          <div className="flex gap-4 mt-2">
+            {project.github && (
+              <a href={project.github} target="_blank" rel="noopener noreferrer" 
+                 className="flex items-center gap-2 px-4 py-2 rounded-lg bg-gray-800 hover:bg-gray-700 transition-all duration-300">
+                <BsGithub className="text-xl" /> GitHub
+              </a>
+            )}
+            {project.website && (
+              <a href={project.website} target="_blank" rel="noopener noreferrer"
+                 className="flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-600 hover:bg-blue-500 transition-all duration-300">
+                <CgWebsite className="text-xl" /> Live Demo
+              </a>
+            )}
           </div>
         </div>
       </div> 
