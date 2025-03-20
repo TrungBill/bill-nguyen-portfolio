@@ -1,5 +1,5 @@
 import React from 'react'
-import image from '/public/pic2.jpg'
+import image from '/public/prrofile.png'
 import { motion } from 'framer-motion'
 
 const Hero = () => {
@@ -10,18 +10,25 @@ const Hero = () => {
           initial={{ y: -50, opacity: 0 }}
           animate={{y: 0, opacity: 1}}
           transition={{ duration: 0.8, delay: 0.2 }}>
-            <h1 className="bg-gradient-to-r from-blue-500 to-pink-500 bg-clip-text text-transparent text-5xl font-light leading-relaxed md:text-7xl pb-3">
-                Hi,I'm Bill Nguyen
-          </h1>
-         
+            
+          <img 
+            src={image}  
+            alt='Bill Nguyen' 
+           className="w-[300px] h-[300px]  overflow-hidden rounded-full shadow-xl shadow-gray-900 transition-all duration-300 hover:-translate-y-5 hover:scale-105 hover:shadow-1xl hover:shadow-gray-600"
+          />
         </motion.div>
         <motion.div 
         initial={{ y: 50, opacity: 0 }}
         animate={{y: 0, opacity: 1}}
         transition={{ duration: 0.8, delay: 0.2 }}
         className='flex max-w-[600px] flex-col items-center justify-center gap-1 text-center'>
-         
-         
+          <div className="pb-1"> {/* Wrapper with padding */}
+          <h1 className="bg-gradient-to-r from-blue-500 to-pink-500 bg-clip-text text-transparent text-5xl font-light leading-relaxed md:text-7xl pb-3">
+                Hi,I'm Bill Nguyen
+          </h1>
+
+          </div>
+          
 
           <p className="md:text-base text-pretty text-sm text-gray-400">Dynamic front-end developer and Computer Science undergraduate at Monash University.</p>
         </motion.div>
