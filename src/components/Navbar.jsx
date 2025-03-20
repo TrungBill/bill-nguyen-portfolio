@@ -33,11 +33,11 @@ const Navbar = () => {
         )}
 
         {isOpened && (
-           <div className={`fixed right-0 top-[84px] flex h-screen w-1/2 flex-col items-start justify-start gap-10 border-1 border-black-800 bg-gray/80 backdrop-blur-sm p-12 ${isOpened ? "block": "hidden"}`}>
+           <div className={`fixed right-0 top-[84px] flex h-screen w-1/2 flex-col items-start justify-start gap-10 border-1 border-black-800 bg-black/80 backdrop-blur-sm p-12 ${isOpened ? "block": "hidden"}`}>
              <ul className="flex flex-col
               gap-9">
-                <a href="#about" className="cursor-pointer opacity-70 transition-all duration-300 hover:opacity-100"><li>Home</li></a>
-                <a href="#projects" className="cursor-pointer opacity-70 transition-all duration-300 hover:opacity-100"><li>Tech</li></a>
+                <a href="#home" className="cursor-pointer opacity-70 transition-all duration-300 hover:opacity-100"><li>Home</li></a>
+                <a href="#tech" className="cursor-pointer opacity-70 transition-all duration-300 hover:opacity-100"><li>Tech</li></a>
                 <a href="#projects" className="cursor-pointer opacity-70 transition-all duration-300 hover:opacity-100"><li>Projects</li></a>
                 <a href="#contact" className="cursor-pointer opacity-70 transition-all duration-300 hover:opacity-100"><li>Contacts</li></a>
               </ul>
