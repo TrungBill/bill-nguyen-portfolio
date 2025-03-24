@@ -33,7 +33,7 @@ const Navbar = () => {
          </li>
 
          <li className='cursor-pointer text-xl opacity-70 transition-all duration-300 hover:text-white-500 hover:opacity-100'> 
-              <a href="/cv.pdf" download className="flex items-center gap-1.5">
+              <a href={`/newCv.pdf?v=${new Date().getTime()}`} download className="flex items-center gap-1.5">
                 <BsDownload /> <span className="text-sm font-medium">Resume</span>
               </a>
         </li>
@@ -70,7 +70,7 @@ const Navbar = () => {
                 </li>
 
                 <li className='cursor-pointer text-xl opacity-70 transition-all duration-300 hover:text-orange-500 hover:opacity-100'> 
-                    <a href="/cv4.pdf" download className="flex items-center gap-1.5">
+                    <a href="/newCv.pdf" download className="flex items-center gap-1.5">
                       <BsDownload /> <span className="text-sm font-medium">Resume</span>
                     </a>
                 </li>
