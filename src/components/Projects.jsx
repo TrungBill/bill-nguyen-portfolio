@@ -25,7 +25,7 @@ const projectData = [
     image: football,
     title: 'PitchPulse',
     description: 'A football chrome extension that displays upcoming fixtures and results of football matches.',
-    technologies: ['Vite','React', 'Tailwind CSS', 'Football.org API', 'Chrome Storage API'],
+    technologies: ['Vite','React', 'Tailwind CSS', 'Football.org API', 'Chrome Storage API', 'NodeJS'],
     github: 'https://github.com/TrungBill/Football-team-result-tracker-chrome-extension',
     website: 'https://github.com/TrungBill/Football-team-result-tracker-chrome-extension'
   },
