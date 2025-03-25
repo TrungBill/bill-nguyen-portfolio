@@ -1,13 +1,11 @@
 import { useState, useEffect } from 'react'
 import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import Contact from './components/Contact'
 import Projects from './components/Projects'
 import Tech from './components/Tech'
-import { LoadingScreen } from './components/LoadingScreen'  // Changed to named import
 
 
 function App() {
